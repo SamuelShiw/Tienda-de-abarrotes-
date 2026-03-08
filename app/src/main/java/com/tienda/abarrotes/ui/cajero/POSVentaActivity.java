@@ -1,13 +1,17 @@
 package com.tienda.abarrotes.ui.cajero;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,13 +20,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tienda.abarrotes.R;
 import com.tienda.abarrotes.model.Producto;
 import com.tienda.abarrotes.ui.adapters.CarritoAdapter;
+import com.tienda.abarrotes.ui.common.ScannerActivity;
 import com.tienda.abarrotes.ui.common.SessionManager;
 import com.tienda.abarrotes.utils.AppConstants;
 import com.tienda.abarrotes.viewmodel.CajaViewModel;
 import com.tienda.abarrotes.viewmodel.VentaViewModel;
-
-import android.content.Intent;
-import com.tienda.abarrotes.ui.common.ScannerActivity;
 
 public class POSVentaActivity extends AppCompatActivity {
 
@@ -33,6 +35,7 @@ public class POSVentaActivity extends AppCompatActivity {
     private Spinner spComprobanteVenta;
     private Button btnBuscarAgregarVenta;
     private Button btnRegistrarVenta;
+    private ImageButton btnEscanearVenta;
     private TextView tvProductoEncontradoVenta;
     private TextView tvTotalesVenta;
     private RecyclerView rvCarritoVenta;
@@ -41,6 +44,25 @@ public class POSVentaActivity extends AppCompatActivity {
     private CajaViewModel cajaViewModel;
     private SessionManager sessionManager;
     private CarritoAdapter carritoAdapter;
+
+    private final ActivityResultLauncher<Intent> scannerLauncher =
+            registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                            String scannedCode = result.getData().getStringExtra("scanned_code");
+                            if (scannedCode != null && !scannedCode.trim().isEmpty()) {
+                                etCodigoBarrasVenta.setText(scannedCode.trim());
+
+                                if (etCantidadVenta.getText().toString().trim().isEmpty()) {
+                                    etCantidadVenta.setText("1");
+                                }
+
+                                buscarYAgregarProducto();
+                            }
+                        }
+                    }
+            );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +89,7 @@ public class POSVentaActivity extends AppCompatActivity {
         spComprobanteVenta = findViewById(R.id.spComprobanteVenta);
         btnBuscarAgregarVenta = findViewById(R.id.btnBuscarAgregarVenta);
         btnRegistrarVenta = findViewById(R.id.btnRegistrarVenta);
+        btnEscanearVenta = findViewById(R.id.btnEscanearVenta);
         tvProductoEncontradoVenta = findViewById(R.id.tvProductoEncontradoVenta);
         tvTotalesVenta = findViewById(R.id.tvTotalesVenta);
         rvCarritoVenta = findViewById(R.id.rvCarritoVenta);
@@ -97,10 +120,12 @@ public class POSVentaActivity extends AppCompatActivity {
 
     private void configurarEventos() {
         btnBuscarAgregarVenta.setOnClickListener(v -> buscarYAgregarProducto());
+
         btnRegistrarVenta.setOnClickListener(v -> confirmarVenta());
-        tvProductoEncontradoVenta.setOnClickListener(v -> {
+
+        btnEscanearVenta.setOnClickListener(v -> {
             Intent intent = new Intent(this, ScannerActivity.class);
-            startActivity(intent);
+            scannerLauncher.launch(intent);
         });
     }
 
@@ -109,6 +134,7 @@ public class POSVentaActivity extends AppCompatActivity {
             mostrarMensaje("Debes abrir caja antes de vender");
             btnBuscarAgregarVenta.setEnabled(false);
             btnRegistrarVenta.setEnabled(false);
+            btnEscanearVenta.setEnabled(false);
         }
     }
 
@@ -142,6 +168,7 @@ public class POSVentaActivity extends AppCompatActivity {
         tvProductoEncontradoVenta.setText(
                 producto.getNombre() +
                         "\nCódigo: " + producto.getCodigoProducto() +
+                        "\nCódigo de barras: " + producto.getCodigoBarras() +
                         "\nPrecio: S/ " + producto.getPrecioVenta() +
                         "\nStock tienda: " + producto.getStockTienda()
         );

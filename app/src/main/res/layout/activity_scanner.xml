@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scanner pendiente"
+        android:text="Abriendo cámara..."
         android:textColor="@color/ios_text_primary"
         android:textSize="@dimen/text_xl"
         android:textStyle="bold" />
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_12"
         android:gravity="center"
-        android:text="La estructura ya está lista para integrar cámara real sin romper el sistema."
+        android:text="Apunta al código de barras del producto"
         android:textColor="@color/ios_text_secondary"
         android:textSize="@dimen/text_md" />
 

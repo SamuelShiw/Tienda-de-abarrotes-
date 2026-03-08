@@ -19,13 +19,16 @@ public final class CodeGenerator {
         );
     }
 
+    /**
+     * En esta versión el código de barras usa el mismo valor visible del código del producto.
+     * Ejemplo: PROD-0001
+     */
     public static String generateBarcode(long correlativo) {
-        return String.format(Locale.getDefault(), "%012d", correlativo);
+        return generateProductCode((int) correlativo);
     }
 
     public static String generateBarcodeFromProductId(int idProducto) {
-        long base = 200000000000L;
-        return String.format(Locale.getDefault(), "%012d", base + idProducto);
+        return generateProductCode(idProducto);
     }
 
     public static String generateWorkerQrContent(Trabajador trabajador) {

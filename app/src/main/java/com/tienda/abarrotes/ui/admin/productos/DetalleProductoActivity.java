@@ -1,6 +1,8 @@
 package com.tienda.abarrotes.ui.admin.productos;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.tienda.abarrotes.R;
 import com.tienda.abarrotes.model.Producto;
+import com.tienda.abarrotes.ui.common.BarcodeGenerator;
 import com.tienda.abarrotes.viewmodel.ProductoViewModel;
 
 import java.util.Locale;
@@ -27,6 +30,7 @@ public class DetalleProductoActivity extends AppCompatActivity {
     private TextView tvDetalleStockMinimoProducto;
     private TextView tvDetalleEstadoProducto;
     private TextView tvDetalleFechaProducto;
+    private ImageView ivDetalleBarcodeProducto;
 
     private ProductoViewModel productoViewModel;
 
@@ -55,6 +59,7 @@ public class DetalleProductoActivity extends AppCompatActivity {
         tvDetalleStockMinimoProducto = findViewById(R.id.tvDetalleStockMinimoProducto);
         tvDetalleEstadoProducto = findViewById(R.id.tvDetalleEstadoProducto);
         tvDetalleFechaProducto = findViewById(R.id.tvDetalleFechaProducto);
+        ivDetalleBarcodeProducto = findViewById(R.id.ivDetalleBarcodeProducto);
     }
 
     private void cargarProducto() {
@@ -87,6 +92,11 @@ public class DetalleProductoActivity extends AppCompatActivity {
         tvDetalleStockMinimoProducto.setText("Stock mínimo: " + producto.getStockMinimo());
         tvDetalleEstadoProducto.setText("Estado: " + producto.getEstado());
         tvDetalleFechaProducto.setText("Fecha registro: " + producto.getFechaRegistro());
+
+        Bitmap barcodeBitmap = BarcodeGenerator.generateBarcode(producto.getCodigoBarras());
+        if (barcodeBitmap != null) {
+            ivDetalleBarcodeProducto.setImageBitmap(barcodeBitmap);
+        }
     }
 
     private void mostrarMensaje(String mensaje) {

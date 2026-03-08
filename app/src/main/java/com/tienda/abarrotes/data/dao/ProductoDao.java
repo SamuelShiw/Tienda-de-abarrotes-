@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.tienda.abarrotes.data.db.DatabaseContract;
 import com.tienda.abarrotes.data.db.DatabaseHelper;
 import com.tienda.abarrotes.model.Producto;
-import com.tienda.abarrotes.utils.AppConstants;
 import com.tienda.abarrotes.utils.CodeGenerator;
 
 import java.util.ArrayList;
@@ -203,26 +202,6 @@ public class ProductoDao {
         return lista;
     }
 
-    private Producto cursorToProducto(Cursor cursor) {
-        Producto producto = new Producto();
-
-        producto.setIdProducto(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_ID)));
-        producto.setCodigoProducto(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CODIGO_PRODUCTO)));
-        producto.setCodigoBarras(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CODIGO_BARRAS)));
-        producto.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_NOMBRE)));
-        producto.setCategoria(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CATEGORIA)));
-        producto.setMarca(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_MARCA)));
-        producto.setUnidadMedida(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_UNIDAD_MEDIDA)));
-        producto.setPrecioCompra(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_PRECIO_COMPRA)));
-        producto.setPrecioVenta(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_PRECIO_VENTA)));
-        producto.setStockAlmacen(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_ALMACEN)));
-        producto.setStockTienda(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_TIENDA)));
-        producto.setStockMinimo(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_MINIMO)));
-        producto.setEstado(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_ESTADO)));
-        producto.setFechaRegistro(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_FECHA_REGISTRO)));
-
-        return producto;
-    }
     public boolean actualizarStocks(int idProducto, int stockAlmacen, int stockTienda) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int filas;
@@ -269,5 +248,26 @@ public class ProductoDao {
         }
 
         return lista;
+    }
+
+    private Producto cursorToProducto(Cursor cursor) {
+        Producto producto = new Producto();
+
+        producto.setIdProducto(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_ID)));
+        producto.setCodigoProducto(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CODIGO_PRODUCTO)));
+        producto.setCodigoBarras(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CODIGO_BARRAS)));
+        producto.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_NOMBRE)));
+        producto.setCategoria(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_CATEGORIA)));
+        producto.setMarca(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_MARCA)));
+        producto.setUnidadMedida(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_UNIDAD_MEDIDA)));
+        producto.setPrecioCompra(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_PRECIO_COMPRA)));
+        producto.setPrecioVenta(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_PRECIO_VENTA)));
+        producto.setStockAlmacen(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_ALMACEN)));
+        producto.setStockTienda(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_TIENDA)));
+        producto.setStockMinimo(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_STOCK_MINIMO)));
+        producto.setEstado(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_ESTADO)));
+        producto.setFechaRegistro(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.ProductoTable.COL_FECHA_REGISTRO)));
+
+        return producto;
     }
 }
