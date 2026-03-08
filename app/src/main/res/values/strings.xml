@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AbarrotesApp</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="guardar">Guardar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="buscar">Buscar</string>
+    <string name="activo">Activo</string>
+    <string name="inactivo">Inactivo</string>
+    <string name="stock_bajo">Stock bajo</string>
+    <string name="sin_stock">Sin stock</string>
+    <string name="abrir_caja">Abrir caja</string>
+    <string name="cerrar_caja">Cerrar caja</string>
+    <string name="registrar_venta">Registrar venta</string>
+    <string name="boleta">Boleta</string>
+    <string name="factura">Factura</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_24">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abrir caja"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_xxl"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etMontoInicialCaja"
+            style="@style/InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:hint="Monto inicial"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnGuardarAperturaCaja"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:text="Guardar apertura" />
+
+        <Button
+            android:id="@+id/btnCancelarAperturaCaja"
+            style="@style/ButtonSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:text="Cancelar" />
+
+    </LinearLayout>
+
+</ScrollView>

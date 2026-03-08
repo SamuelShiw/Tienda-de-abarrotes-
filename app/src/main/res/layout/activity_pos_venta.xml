@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_24">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POS de ventas"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_xxl"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etCodigoBarrasVenta"
+            style="@style/InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:hint="Código de barras"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etCantidadVenta"
+            style="@style/InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:hint="Cantidad"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnBuscarAgregarVenta"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:text="Buscar y agregar" />
+
+        <TextView
+            android:id="@+id/tvProductoEncontradoVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:background="@drawable/bg_card_soft"
+            android:padding="@dimen/space_16"
+            android:text="Producto no seleccionado"
+            android:textColor="@color/ios_text_secondary"
+            android:textSize="@dimen/text_md" />
+
+        <Spinner
+            android:id="@+id/spComprobanteVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:background="@drawable/bg_input"
+            android:padding="@dimen/space_16" />
+
+        <EditText
+            android:id="@+id/etClienteNombreVenta"
+            style="@style/InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:hint="Cliente nombre opcional" />
+
+        <EditText
+            android:id="@+id/etClienteDocumentoVenta"
+            style="@style/InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:hint="Cliente documento opcional" />
+
+        <TextView
+            android:id="@+id/tvTotalesVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/bg_card"
+            android:padding="@dimen/space_16"
+            android:text="Subtotal: S/ 0.00&#10;IGV: S/ 0.00&#10;Total: S/ 0.00"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_md"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="Carrito"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_lg"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCarritoVenta"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="@dimen/space_12" />
+
+        <Button
+            android:id="@+id/btnRegistrarVenta"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="Registrar venta" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_12"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="@dimen/space_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvItemNombreCarrito"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Producto"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_lg"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnQuitarCarrito"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_button_danger"
+            android:contentDescription="Quitar"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="@color/ios_text_white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvItemCantidadCarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:text="Cantidad: 1"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemPrecioUnitarioCarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="P. Unit: S/ 0.00"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemImporteCarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Importe: S/ 0.00"
+        android:textColor="@color/ios_primary"
+        android:textSize="@dimen/text_md"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_24">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panel Cajero"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_xxl"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvUsuarioCajero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:text="Usuario: cajero"
+            android:textColor="@color/ios_primary"
+            android:textSize="@dimen/text_sm"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFechaCajero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:text="Fecha: 2026-03-08"
+            android:textColor="@color/ios_text_secondary"
+            android:textSize="@dimen/text_sm" />
+
+        <TextView
+            android:id="@+id/tvEstadoCajaCajero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:background="@drawable/bg_card_soft"
+            android:padding="@dimen/space_16"
+            android:text="Caja actual: CERRADA"
+            android:textColor="@color/ios_text_primary"
+            android:textSize="@dimen/text_md"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnAbrirCaja"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="Abrir caja" />
+
+        <Button
+            android:id="@+id/btnIrPOS"
+            style="@style/ButtonSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:text="Ir al POS" />
+
+        <Button
+            android:id="@+id/btnCerrarCaja"
+            style="@style/ButtonSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:text="Cerrar caja" />
+
+        <Button
+            android:id="@+id/btnResumenCaja"
+            style="@style/ButtonSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_12"
+            android:text="Ver resumen" />
+
+        <Button
+            android:id="@+id/btnCerrarSesionCajero"
+            style="@style/ButtonDanger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:text="Cerrar sesión" />
+
+    </LinearLayout>
+
+</ScrollView>

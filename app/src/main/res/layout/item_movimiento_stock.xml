@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_12"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="@dimen/space_16">
+
+    <TextView
+        android:id="@+id/tvItemTipoMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INGRESO_ALMACEN"
+        android:textColor="@color/ios_primary"
+        android:textSize="@dimen/text_md"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvItemProductoMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:text="ID producto: 1"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemCantidadMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Cantidad: 20"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemOrigenDestinoMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Origen: SISTEMA → Destino: ALMACEN"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemFechaHoraMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Fecha: 2026-03-08 | Hora: 11:30:00"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemResponsableMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Responsable ID: 1"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+    <TextView
+        android:id="@+id/tvItemObservacionMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Observación: Sin detalle"
+        android:textColor="@color/ios_text_secondary"
+        android:textSize="@dimen/text_sm" />
+
+</LinearLayout>

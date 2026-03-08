@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AbarrotesApp" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/ios_primary</item>
+        <item name="colorOnPrimary">@color/ios_text_white</item>
+        <item name="colorSecondary">@color/ios_secondary</item>
+        <item name="android:statusBarColor">@color/ios_background</item>
+        <item name="android:navigationBarColor">@color/ios_background</item>
+        <item name="android:windowBackground">@drawable/bg_screen</item>
+        <item name="android:textColorPrimary">@color/ios_text_primary</item>
+        <item name="android:textColorSecondary">@color/ios_text_secondary</item>
+        <item name="colorSurface">@color/ios_surface</item>
+        <item name="colorOnSurface">@color/ios_text_primary</item>
+    </style>
+
+</resources>

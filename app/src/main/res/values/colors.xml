@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ios_background">#F5F7FB</color>
+    <color name="ios_surface">#FFFFFF</color>
+    <color name="ios_surface_soft">#F9FAFC</color>
+    <color name="ios_border">#E5E9F2</color>
+    <color name="ios_divider">#EEF1F6</color>
+
+    <color name="ios_text_primary">#111827</color>
+    <color name="ios_text_secondary">#6B7280</color>
+    <color name="ios_text_hint">#9CA3AF</color>
+    <color name="ios_text_white">#FFFFFF</color>
+
+    <color name="ios_primary">#2563EB</color>
+    <color name="ios_primary_dark">#1D4ED8</color>
+    <color name="ios_secondary">#EAF1FF</color>
+
+    <color name="ios_success">#16A34A</color>
+    <color name="ios_success_soft">#EAF8EF</color>
+
+    <color name="ios_error">#DC2626</color>
+    <color name="ios_error_soft">#FDECEC</color>
+
+    <color name="ios_warning">#D97706</color>
+    <color name="ios_warning_soft">#FFF4E5</color>
+
+    <color name="ios_black">#000000</color>
+    <color name="ios_shadow">#14000000</color>
+    <color name="transparent">#00000000</color>
+</resources>
